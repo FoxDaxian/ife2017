@@ -1,0 +1,104 @@
+.wrap {
+     :global {
+        .main {
+            border-radius: 14px;
+            width: 60vw;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            overflow: hidden;
+            &:hover {
+                cursor: pointer;
+                img {
+                    -webkit-filter: blur(3px);
+                    -moz-filter: blur(3px);
+                    -ms-filter: blur(3px);
+                    filter: blur(3px);
+                }
+                .text {
+                    background-color: rgba(0, 0, 0, 0.2);
+                    box-shadow: 0 0 10px #000;
+                    &:after {
+                        height: 100%;
+                    }
+                    &:before {
+                        width: 100%;
+                    }
+                    span {
+                        margin-top: 0;
+                        opacity: 1;
+                    }
+                }
+            }
+            .text {
+                font-family: "黑体";
+                position: absolute;
+                z-index: 10;
+                width: 80%;
+                height: 80%;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                span {
+                    background-image: -webkit-linear-gradient(left, #D81159, #E53A40 10%, #FFBC42 20%, #75D701 30%, #30A9DE 40%, #D81159 50%, #E53A40 60%, #FFBC42 70%, #75D701 80%, #30A9DE 90%, #D81159);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    background-size: 200% 100%;
+                    animation: flowlight 5s linear infinite;
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    transition: 0.5s;
+                    font-size: 50px;
+                    font-weight: bold;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    margin-top: 50px;
+                    opacity: 0;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    box-sizing: border-box;
+                    border: 3px solid #fff;
+                    border-top-width: 0;
+                    border-bottom-width: 0;
+                    transition: height 0.5s;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    width: 0;
+                    height: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    box-sizing: border-box;
+                    border: 3px solid #fff;
+                    border-left-width: 0;
+                    border-right-width: 0;
+                    transition: width 0.5s;
+                } //在css-modules下要用:global吧keyframes的名字包起来
+                @keyframes :global(flowlight) {
+                    0% {
+                        background-position: 0 0;
+                    }
+                    100% {
+                        background-position: -100% 0;
+                    }
+                }
+            }
+            img {
+                transition: 2s;
+                width: 100%;
+            }
+        }
+    }
+}

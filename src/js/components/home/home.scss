@@ -1,0 +1,17 @@
+.wrap {
+    padding: 50px;
+     :global {
+        .lists {
+            padding-top: 30px;
+            .link {
+                font-size: 20px;
+                &:hover {
+                    color: rgb(0, 152, 94);
+                }
+            }
+        }
+    }
+    h2 {
+        text-align: center;
+    }
+}
