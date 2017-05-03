@@ -14,12 +14,9 @@
 		<p>年龄：{{user.age}}</p>
 		<h1>你好啊，{{school}}</h1>
 	</div>
+	<input type="text" value="1">
 
 	<script>
-		
-
-
-
 		let app = new Vue({
 			el: '#app',
 			data: {
@@ -29,8 +26,20 @@
 				},
 				school: 'bupt',
 				major: 'computer'
+			},
+			watch:{
+				age:function() {
+					console.log("改变了");
+				},
+				school:function() {
+					console.log("学校也被改变了");
+				}
 			}
 		});
+		document.querySelector('input').value = app.data.user.age;
+		document.querySelector('input').oninput = function(event) {
+			app.data.user.age = event.target.value;
+		}
 	</script>
 </body>
 </html>

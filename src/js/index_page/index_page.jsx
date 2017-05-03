@@ -46,10 +46,6 @@ class IndexPage extends Component {
               return <LazyBundle {...props} component={System.import("../components/dataBind2/dataBind2.jsx")}></LazyBundle>
             }}></Route>
 
-            {/*vue2*/}
-            <Route path="/ife/dataBind3" render={(props) => {
-              return <LazyBundle {...props} component={System.import("../components/dataBind3/dataBind3.jsx")}></LazyBundle>
-            }}></Route>
           </div>
         </Router>
       </div>

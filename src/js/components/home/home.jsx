@@ -19,7 +19,7 @@ class Home extends Component {
                         <Link className="link" to="/ife/dataBind2">动态数据绑定（二）</Link>
                     </div>
                     <div className="link_wrap">
-                        <Link className="link" to="/ife/dataBind3">动态数据绑定（三）</Link>
+                        <a className="link" target="_blank" href="https://a13821190779.github.io/dataBindAll/">动态数据绑定（3-4）</a>
                     </div>
                 </div>
             </div>

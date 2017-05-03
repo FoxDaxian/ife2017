@@ -1,20 +1,3 @@
-// let app2 = new Observer({
-//     name: {
-//         firstName: 'shaofeng',
-//         lastName: 'liang'
-//     },
-//     age: 25
-// });
-
-// app2.$watch('name', function (newName) {
-//     console.log('我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。')
-// });
-
-// app2.data.name.firstName = 'hahaha';
-// // 输出：我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。
-
-
-
 //订阅-发布
 function queue() {
 	this.subArr = [];
@@ -57,16 +40,16 @@ Observer.prototype.convert = function(data,parentObj) {
 					enumerable: true,
 					configurable: true,
 					get:function() {
-						console.log(`访问了${item}`);
+						// console.log(`访问了${item}`);
 						return curValue;
 					},
 					set:function( newValue ) {
-						console.log(`设置了${item}`);
-						util(_this.parentObj,item);
+						// console.log(`设置了${item}`);
 						if( typeof newValue === "object" ){
 							curValue = new Observer(newValue);
 						}
 						curValue = newValue;
+						util(_this.parentObj,item);
 					}
 				});
 			}
@@ -75,6 +58,7 @@ Observer.prototype.convert = function(data,parentObj) {
 }
 //递归找爸爸
 function util(arr, item) {
+	queueObj.notify(item);
 	arr.forEach(function(el, i) {
 		if( el.son === item ){
 			util(arr,el.parent);
