@@ -30,9 +30,25 @@ class IndexPage extends Component {
       <div>
         <Router>
           <div>
-            <Route path="/" exact component={Home}></Route>
-            <Route path="/suspension" render={(props) => {
+            <Route path="/ife/" exact component={Home}></Route>
+            {/*有趣的鼠标hover*/}
+            <Route path="/ife/suspension" render={(props) => {
               return <LazyBundle {...props} component={System.import("../components/suspension/suspension.jsx")}></LazyBundle>
+            }}></Route>
+
+            {/*vue1*/}
+            <Route path="/ife/dataBind1" render={(props) => {
+              return <LazyBundle {...props} component={System.import("../components/dataBind1/dataBind1.jsx")}></LazyBundle>
+            }}></Route>
+
+            {/*vue2*/}
+            <Route path="/ife/dataBind2" render={(props) => {
+              return <LazyBundle {...props} component={System.import("../components/dataBind2/dataBind2.jsx")}></LazyBundle>
+            }}></Route>
+
+            {/*vue2*/}
+            <Route path="/ife/dataBind3" render={(props) => {
+              return <LazyBundle {...props} component={System.import("../components/dataBind3/dataBind3.jsx")}></LazyBundle>
             }}></Route>
           </div>
         </Router>

@@ -41,6 +41,7 @@
                 top: 50%;
                 transform: translateX(-50%) translateY(-50%);
                 span {
+                    background:red;
                     background-image: -webkit-linear-gradient(left, #D81159, #E53A40 10%, #FFBC42 20%, #75D701 30%, #30A9DE 40%, #D81159 50%, #E53A40 60%, #FFBC42 70%, #75D701 80%, #30A9DE 90%, #D81159);
                     -webkit-background-clip: text;
                     color: transparent;
