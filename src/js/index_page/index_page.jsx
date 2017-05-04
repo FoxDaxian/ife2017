@@ -46,6 +46,11 @@ class IndexPage extends Component {
               return <LazyBundle {...props} component={System.import("../components/dataBind2/dataBind2.jsx")}></LazyBundle>
             }}></Route>
 
+            {/*饼状loading图*/}
+            <Route path="/ife/pieLoading" render={(props) => {
+                return <LazyBundle {...props} component={System.import("../components/pieLoading/pieLoading.jsx")}></LazyBundle>
+              }}></Route>
+
           </div>
         </Router>
       </div>

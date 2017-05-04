@@ -21,6 +21,9 @@ class Home extends Component {
                     <div className="link_wrap">
                         <a className="link" target="_blank" href="https://a13821190779.github.io/dataBindAll/">动态数据绑定（3-4）</a>
                     </div>
+                    <div className="link_wrap">
+                        <Link className="link" to="/ife/pieLoading">CSS3饼状loading效果</Link>
+                    </div>
                 </div>
             </div>
         );
