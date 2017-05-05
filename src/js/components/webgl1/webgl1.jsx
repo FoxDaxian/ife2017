@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import css from "./webgl1.scss";
 const THREE = require("../../../static/three.js");
+
 class Webgl1 extends Component {
     componentDidMount() {
         var renderer = new THREE.WebGLRenderer({
@@ -13,30 +14,60 @@ class Webgl1 extends Component {
 
         //开启一个照相机（有正交的还有透视的
         var camera = new THREE.OrthographicCamera(-50, 50, 50, -50, -20, 100);
-        camera.position.set(2, 2, 5);
+        camera.position.set(1, 1, 3);
         camera.lookAt(new THREE.Vector3(0, 0, 0));
-        scene.add(camera);
+
+
+
 
         //制作立方体
         var cube1 = new THREE.Mesh(new THREE.CubeGeometry(30, 20, 24),
-            new THREE.MeshBasicMaterial({
+            new THREE.MeshLambertMaterial({
                 color: "#D2D2D2",
-                wireframe: true
             })
         );
 
 
         //圆环面（像轮胎那样
-        var cube6 = new THREE.Mesh(new THREE.TorusGeometry(3, 2, 24, 20),
-            new THREE.MeshBasicMaterial({
-                color: 0xff0000,
-                wireframe: true
+        var TorusGeometry1 = new THREE.Mesh(new THREE.TorusGeometry(3, 2, 16, 10),
+            new THREE.MeshLambertMaterial({
+                color: "green",
             })
         );
+        TorusGeometry1.position.set(-15, -10, 12);
+
+        var TorusGeometry2 = new THREE.Mesh(new THREE.TorusGeometry(3, 2, 16, 10),
+            new THREE.MeshLambertMaterial({
+                color: "green",
+            })
+        );
+        TorusGeometry2.position.set(-15, -10, -12);
+
+        var TorusGeometry3 = new THREE.Mesh(new THREE.TorusGeometry(3, 2, 16, 10),
+            new THREE.MeshLambertMaterial({
+                color: "green",
+            })
+        );
+        TorusGeometry3.position.set(15, -10, 12);
+
+        var TorusGeometry4 = new THREE.Mesh(new THREE.TorusGeometry(3, 2, 16, 10),
+            new THREE.MeshLambertMaterial({
+                color: "green",
+            })
+        );
+        TorusGeometry4.position.set(15, -10, -12);
+
+
+        var light = new THREE.DirectionalLight()
+        light.position.set(-2, 2, 5)
+        scene.add(light)
 
 
         scene.add(cube1);
-        scene.add(cube6);
+        scene.add(TorusGeometry1);
+        scene.add(TorusGeometry2);
+        scene.add(TorusGeometry3);
+        scene.add(TorusGeometry4);
 
         //初始化renderer开始渲染
         renderer.render(scene, camera);
