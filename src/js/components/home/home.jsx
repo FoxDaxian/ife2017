@@ -24,6 +24,9 @@ class Home extends Component {
                     <div className="link_wrap">
                         <Link className="link" to="/ife/pieLoading">CSS3饼状loading效果</Link>
                     </div>
+                    <div className="link_wrap">
+                        <Link className="link" to="/ife/webgl1">WebGL No.1 - Three.js 入门</Link>
+                    </div>
                 </div>
             </div>
         );

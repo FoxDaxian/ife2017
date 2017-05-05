@@ -1,5 +1,172 @@
 .wrap {
+    font-size: 0;
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid #dcdcdc;
      :global {
-         
-     }
+        .cirque {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            &:after {
+                content: "";
+                position: absolute;
+                box-sizing: border-box;
+                width: 150%;
+                height: 150%;
+                border-radius: 50%;
+                top: -25%;
+                left: -25%;
+                border: 5px solid rgb(255, 41, 140);
+            }
+            &:before {
+                transform: rotate(1deg);
+                content: "";
+                position: absolute;
+                box-sizing: border-box;
+                width: 0px;
+                height: 0px;
+                top: -30px;
+                left: -30px;
+                border: 80px solid transparent;
+                border-left-color: #fff;
+                z-index: 2;
+                animation: cirque 1s linear infinite;
+            }
+        }
+        .pieMask {
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 10;
+            border: 50px solid;
+            border-color: transparent;
+            border-radius: 50%;
+            border-top-color: red;
+            border-right-color: red;
+            &:after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                position: absolute;
+                top: -50px;
+                left: -50px;
+                z-index: 100;
+                border: 50px solid;
+                border-color: transparent;
+                border-radius: 50%;
+                border-bottom-color: blue;
+                border-left-color: blue;
+            }
+        }
+        .pieMask1 {
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 100;
+            border: 50px solid;
+            border-color: transparent;
+            border-radius: 50%;
+            border-top-color: red;
+            border-right-color: red;
+            animation: pieMask1 2s linear infinite;
+        }
+        .pieMask2 {
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 101;
+            border: 50px solid;
+            border-color: transparent;
+            border-radius: 50%;
+            border-bottom-color: blue;
+            border-left-color: blue;
+            animation: pieMask2 2s linear infinite;
+        }
+    }
+}
+
+@keyframes :global(cirque) {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes :global(pieMask1) {
+    0% {
+        z-index: 100;
+        transform: rotate(0deg);
+    }
+    25% {
+        z-index: 150;
+        transform: rotate(-180deg);
+    }
+    50% {
+        z-index: 150;
+        transform: rotate(-180deg);
+    }
+    75% {
+        z-index: 100;
+        transform: rotate(-360deg);
+    }
+    100% {
+        z-index: 100;
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes :global(pieMask2) {
+    0% {
+        z-index: 100;
+        transform: rotate(0deg);
+    }
+    25% {
+        z-index: 100;
+        transform: rotate(0deg);
+    }
+    50% {
+        z-index: 150;
+        transform: rotate(-180deg);
+    }
+    75% {
+        z-index: 150;
+        transform: rotate(-180deg);
+    }
+    100% {
+        z-index: 100;
+        transform: rotate(-360deg);
+    }
 }

@@ -50,6 +50,11 @@ class IndexPage extends Component {
             <Route path="/ife/pieLoading" render={(props) => {
                 return <LazyBundle {...props} component={System.import("../components/pieLoading/pieLoading.jsx")}></LazyBundle>
               }}></Route>
+              
+            {/*WebGL1*/}
+            <Route path="/ife/webgl1" render={(props) => {
+                return <LazyBundle {...props} component={System.import("../components/webgl1/webgl1.jsx")}></LazyBundle>
+              }}></Route>
 
           </div>
         </Router>
