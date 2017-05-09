@@ -48,19 +48,20 @@ class IndexPage extends Component {
 
             {/*饼状loading图*/}
             <Route path="/ife/pieLoading" render={(props) => {
-                return <LazyBundle {...props} component={System.import("../components/pieLoading/pieLoading.jsx")}></LazyBundle>
-              }}></Route>
-              
+              return <LazyBundle {...props} component={System.import("../components/pieLoading/pieLoading.jsx")}></LazyBundle>
+            }}></Route>
+
             {/*WebGL1*/}
             <Route path="/ife/webgl1" render={(props) => {
-                return <LazyBundle {...props} component={System.import("../components/webgl1/webgl1.jsx")}></LazyBundle>
-              }}></Route>
+              return <LazyBundle {...props} component={System.import("../components/webgl1/webgl1.jsx")}></LazyBundle>
+            }}></Route>
 
             {/*WebGL2*/}
             <Route path="/ife/webgl2" render={(props) => {
-                return <LazyBundle {...props} component={System.import("../components/webgl2/webgl2.jsx")}></LazyBundle>
-              }}></Route>
+              return <LazyBundle {...props} component={System.import("../components/webgl2/webgl2.jsx")}></LazyBundle>
+            }}></Route>
 
+           
           </div>
         </Router>
       </div>
