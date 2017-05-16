@@ -61,7 +61,12 @@ class IndexPage extends Component {
               return <LazyBundle {...props} component={System.import("../components/webgl2/webgl2.jsx")}></LazyBundle>
             }}></Route>
 
-           
+            {/*WebGL2*/}
+            <Route path="/ife/md" render={(props) => {
+              return <LazyBundle {...props} component={System.import("../components/md/md.jsx")}></LazyBundle>
+            }}></Route>
+
+
           </div>
         </Router>
       </div>

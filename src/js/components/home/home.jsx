@@ -30,6 +30,9 @@ class Home extends Component {
                     <div className="link_wrap">
                         <Link className="link" to="/ife/webgl2">WebGL No. 2 - 光与影</Link>
                     </div>
+                    <div className="link_wrap">
+                        <Link className="link" to="/ife/md">markdown</Link>
+                    </div>
                 </div>
             </div>
         );
