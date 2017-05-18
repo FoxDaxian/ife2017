@@ -1,13 +1,12 @@
 import React, { PropTypes } from 'react';
 import css from "./md.scss";
 import util from "./index.js";
-console.log(util);
 export default class Md extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             text: `
-            <p># hello</p>
+            <p><br/></p>
             `
         };
     }
@@ -24,7 +23,6 @@ export default class Md extends React.Component {
             tempWrap = document.createElement("div");
         [].slice.call(text).forEach(function (el, i) {
             var text = el.innerHTML.replace(/<[^>]+>/g, "");
-            console.log(text);
 
             util.regFn(text, elArr);
         });
